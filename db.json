@@ -1,19 +1,974 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
+  "timetable": {
+    "startDate": "01.09.2023",
+    "endDate": "28.12.2023",
+    "timetable": [
+      {
+        "name": "Понедельник",
+        "subjects": [
+          {
+            "auditories": [
+              "602-2 к."
+            ],
+            "startLessonTime": "09:00",
+            "endLessonTime": "10:20",
+            "numSubgroup": 0,
+            "subject": "ИнЯз",
+            "subjectFullName": "Иностранный язык",
+            "weekNumber": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Оксана",
+                "middleName": "Николаевна",
+                "lastName": "Шульга",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/545439",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "313-3 к."
+            ],
+            "startLessonTime": "09:00",
+            "endLessonTime": "10:20",
+            "numSubgroup": 0,
+            "subject": "ИнЯз",
+            "subjectFullName": "Иностранный язык",
+            "weekNumber": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Ирина",
+                "middleName": "Ильгизовна",
+                "lastName": "Лихтарович",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/500223",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "102-3 к."
+            ],
+            "startLessonTime": "10:35",
+            "endLessonTime": "11:55",
+            "numSubgroup": 0,
+            "subject": "ИстБГ",
+            "subjectFullName": "История белорусской государственности",
+            "weekNumber": [
+              2,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Наталия",
+                "middleName": "Ивановна",
+                "lastName": "Куракевич",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/500362",
+                "degree": "кандидат исторических наук"
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "611-2 к."
+            ],
+            "startLessonTime": "10:35",
+            "endLessonTime": "11:55",
+            "numSubgroup": 0,
+            "subject": "ОКПрог",
+            "subjectFullName": "Основы конструирования программ",
+            "weekNumber": [
+              3
+            ],
+            "employees": [
+              {
+                "firstName": "Константин",
+                "middleName": "Игоревич",
+                "lastName": "Давыдович",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/525053",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "611-2 к."
+            ],
+            "startLessonTime": "10:35",
+            "endLessonTime": "11:55",
+            "numSubgroup": 0,
+            "subject": "ОКПрог",
+            "subjectFullName": "Основы конструирования программ",
+            "weekNumber": [
+              1
+            ],
+            "employees": [
+              {
+                "firstName": "Константин",
+                "middleName": "Игоревич",
+                "lastName": "Давыдович",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/525053",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "205-3 к."
+            ],
+            "startLessonTime": "12:25",
+            "endLessonTime": "13:45",
+            "numSubgroup": 0,
+            "subject": "ПриСОД",
+            "subjectFullName": "Прикладные системы обработки данных",
+            "weekNumber": [
+              2,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Анатолий",
+                "middleName": "Григорьевич",
+                "lastName": "Давыдовский",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/504461",
+                "degree": "кандидат биологических наук"
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "205-3 к."
+            ],
+            "startLessonTime": "12:25",
+            "endLessonTime": "13:45",
+            "numSubgroup": 0,
+            "subject": "Логика",
+            "subjectFullName": "Логика",
+            "weekNumber": [
+              1,
+              3
+            ],
+            "employees": [
+              {
+                "firstName": "Виталий",
+                "middleName": "Васильевич",
+                "lastName": "Шепетюк",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/500630",
+                "degree": "кандидат философских наук"
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "205-3 к."
+            ],
+            "startLessonTime": "14:00",
+            "endLessonTime": "15:20",
+            "numSubgroup": 0,
+            "subject": "ОАиП",
+            "subjectFullName": "Основы алгоритмизации и программирования",
+            "weekNumber": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Ольга",
+                "middleName": "Викторовна",
+                "lastName": "Гуревич",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/500095",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "607-2 к."
+            ],
+            "startLessonTime": "15:50",
+            "endLessonTime": "17:10",
+            "numSubgroup": 0,
+            "subject": "К.Ч.",
+            "subjectFullName": "Кураторский,информационный час",
+            "weekNumber": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Андрей",
+                "middleName": "Петрович",
+                "lastName": "Клюев",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/500200",
+                "degree": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Вторник",
+        "subjects": [
+          {
+            "auditories": [
+              "320-5 к."
+            ],
+            "startLessonTime": "09:00",
+            "endLessonTime": "10:20",
+            "numSubgroup": 1,
+            "subject": "ПриСОД",
+            "subjectFullName": "Прикладные системы обработки данных",
+            "weekNumber": [
+              2,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Наталья",
+                "middleName": "Ивановна",
+                "lastName": "Липницкая",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/504541",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "405-5 к."
+            ],
+            "startLessonTime": "09:00",
+            "endLessonTime": "10:20",
+            "numSubgroup": 2,
+            "subject": "ОАиП",
+            "subjectFullName": "Основы алгоритмизации и программирования",
+            "weekNumber": [
+              2,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Никита",
+                "middleName": "Дмитриевич",
+                "lastName": "Рязанцев",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/550500",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "320-5 к."
+            ],
+            "startLessonTime": "09:00",
+            "endLessonTime": "10:20",
+            "numSubgroup": 2,
+            "subject": "ПриСОД",
+            "subjectFullName": "Прикладные системы обработки данных",
+            "weekNumber": [
+              1,
+              3
+            ],
+            "employees": [
+              {
+                "firstName": "Наталья",
+                "middleName": "Ивановна",
+                "lastName": "Липницкая",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/504541",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "318-5 к."
+            ],
+            "startLessonTime": "09:00",
+            "endLessonTime": "10:20",
+            "numSubgroup": 1,
+            "subject": "ОАиП",
+            "subjectFullName": "Основы алгоритмизации и программирования",
+            "weekNumber": [
+              1,
+              3
+            ],
+            "employees": [
+              {
+                "firstName": "Никита",
+                "middleName": "Дмитриевич",
+                "lastName": "Рязанцев",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/550500",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "316-4 к."
+            ],
+            "startLessonTime": "10:35",
+            "endLessonTime": "11:55",
+            "numSubgroup": 0,
+            "subject": "ЛАиАГ",
+            "subjectFullName": "Линейная алгебра и аналитическая геометрия",
+            "weekNumber": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Оксана",
+                "middleName": "Фёдоровна",
+                "lastName": "Филипович",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/504574",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [],
+            "startLessonTime": "12:25",
+            "endLessonTime": "13:45",
+            "numSubgroup": 0,
+            "subject": "ФизК",
+            "subjectFullName": "Физическая культура",
+            "weekNumber": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "employees": []
+          }
+        ]
+      },
+      {
+        "name": "Среда",
+        "subjects": [
+          {
+            "auditories": [
+              "503а-4 к."
+            ],
+            "startLessonTime": "09:00",
+            "endLessonTime": "10:20",
+            "numSubgroup": 1,
+            "subject": "Физика",
+            "subjectFullName": "Физика",
+            "weekNumber": [
+              2
+            ],
+            "employees": [
+              {
+                "firstName": "Сергей",
+                "middleName": "Васильевич",
+                "lastName": "Родин",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/500704",
+                "degree": "кандидат физико-математических наук"
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "221-5 к."
+            ],
+            "startLessonTime": "09:00",
+            "endLessonTime": "10:20",
+            "numSubgroup": 0,
+            "subject": "ПриСОД",
+            "subjectFullName": "Прикладные системы обработки данных",
+            "weekNumber": [
+              3
+            ],
+            "employees": [
+              {
+                "firstName": "Наталья",
+                "middleName": "Ивановна",
+                "lastName": "Липницкая",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/504541",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "503а-4 к."
+            ],
+            "startLessonTime": "09:00",
+            "endLessonTime": "10:20",
+            "numSubgroup": 2,
+            "subject": "Физика",
+            "subjectFullName": "Физика",
+            "weekNumber": [
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Сергей",
+                "middleName": "Васильевич",
+                "lastName": "Родин",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/500704",
+                "degree": "кандидат физико-математических наук"
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "503а-4 к."
+            ],
+            "startLessonTime": "10:35",
+            "endLessonTime": "11:55",
+            "numSubgroup": 1,
+            "subject": "Физика",
+            "subjectFullName": "Физика",
+            "weekNumber": [
+              2
+            ],
+            "employees": [
+              {
+                "firstName": "Сергей",
+                "middleName": "Васильевич",
+                "lastName": "Родин",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/500704",
+                "degree": "кандидат физико-математических наук"
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "611-2 к."
+            ],
+            "startLessonTime": "10:35",
+            "endLessonTime": "11:55",
+            "numSubgroup": 2,
+            "subject": "ОКПрог",
+            "subjectFullName": "Основы конструирования программ",
+            "weekNumber": [
+              2
+            ],
+            "employees": [
+              {
+                "firstName": "Константин",
+                "middleName": "Игоревич",
+                "lastName": "Давыдович",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/525053",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "416-4 к."
+            ],
+            "startLessonTime": "10:35",
+            "endLessonTime": "11:55",
+            "numSubgroup": 0,
+            "subject": "ИстБГ",
+            "subjectFullName": "История белорусской государственности",
+            "weekNumber": [
+              3
+            ],
+            "employees": [
+              {
+                "firstName": "Наталия",
+                "middleName": "Ивановна",
+                "lastName": "Куракевич",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/500362",
+                "degree": "кандидат исторических наук"
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "503а-4 к."
+            ],
+            "startLessonTime": "10:35",
+            "endLessonTime": "11:55",
+            "numSubgroup": 2,
+            "subject": "Физика",
+            "subjectFullName": "Физика",
+            "weekNumber": [
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Сергей",
+                "middleName": "Васильевич",
+                "lastName": "Родин",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/500704",
+                "degree": "кандидат физико-математических наук"
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "611-2 к."
+            ],
+            "startLessonTime": "10:35",
+            "endLessonTime": "11:55",
+            "numSubgroup": 1,
+            "subject": "ОКПрог",
+            "subjectFullName": "Основы конструирования программ",
+            "weekNumber": [
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Константин",
+                "middleName": "Игоревич",
+                "lastName": "Давыдович",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/525053",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "102-3 к."
+            ],
+            "startLessonTime": "10:35",
+            "endLessonTime": "11:55",
+            "numSubgroup": 0,
+            "subject": "Физика",
+            "subjectFullName": "Физика",
+            "weekNumber": [
+              1
+            ],
+            "employees": [
+              {
+                "firstName": "Сергей",
+                "middleName": "Васильевич",
+                "lastName": "Родин",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/500704",
+                "degree": "кандидат физико-математических наук"
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "431-1 к."
+            ],
+            "startLessonTime": "12:25",
+            "endLessonTime": "13:45",
+            "numSubgroup": 0,
+            "subject": "ОКГ",
+            "subjectFullName": "Основы компьютерной графики",
+            "weekNumber": [
+              2,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Татьяна",
+                "middleName": "Александровна",
+                "lastName": "Марамыгина",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/524816",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "205-3 к."
+            ],
+            "startLessonTime": "12:25",
+            "endLessonTime": "13:45",
+            "numSubgroup": 0,
+            "subject": "Физика",
+            "subjectFullName": "Физика",
+            "weekNumber": [
+              1,
+              3
+            ],
+            "employees": [
+              {
+                "firstName": "Сергей",
+                "middleName": "Васильевич",
+                "lastName": "Родин",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/500704",
+                "degree": "кандидат физико-математических наук"
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "205-3 к."
+            ],
+            "startLessonTime": "14:00",
+            "endLessonTime": "15:20",
+            "numSubgroup": 0,
+            "subject": "ОКПрог",
+            "subjectFullName": "Основы конструирования программ",
+            "weekNumber": [
+              2
+            ],
+            "employees": [
+              {
+                "firstName": "Анастасия",
+                "middleName": "Николаевна",
+                "lastName": "Василькова",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/541834",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "507-2 к."
+            ],
+            "startLessonTime": "14:00",
+            "endLessonTime": "15:20",
+            "numSubgroup": 1,
+            "subject": "ОКГ",
+            "subjectFullName": "Основы компьютерной графики",
+            "weekNumber": [
+              1,
+              3
+            ],
+            "employees": [
+              {
+                "firstName": "Светлана",
+                "middleName": "Валентиновна",
+                "lastName": "Гиль",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/525199",
+                "degree": "кандидат технических наук"
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "205-3 к."
+            ],
+            "startLessonTime": "14:00",
+            "endLessonTime": "15:20",
+            "numSubgroup": 0,
+            "subject": "ПриСОД",
+            "subjectFullName": "Прикладные системы обработки данных",
+            "weekNumber": [
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Анатолий",
+                "middleName": "Григорьевич",
+                "lastName": "Давыдовский",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/504461",
+                "degree": "кандидат биологических наук"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Четверг",
+        "subjects": [
+          {
+            "auditories": [
+              "205-3 к."
+            ],
+            "startLessonTime": "09:00",
+            "endLessonTime": "10:20",
+            "numSubgroup": 0,
+            "subject": "ИстБГ",
+            "subjectFullName": "История белорусской государственности",
+            "weekNumber": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Наталия",
+                "middleName": "Ивановна",
+                "lastName": "Куракевич",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/500362",
+                "degree": "кандидат исторических наук"
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "205-3 к."
+            ],
+            "startLessonTime": "10:35",
+            "endLessonTime": "11:55",
+            "numSubgroup": 0,
+            "subject": "МА",
+            "subjectFullName": "Математический анализ",
+            "weekNumber": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Юлия",
+                "middleName": "Леонидовна",
+                "lastName": "Ратушева",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/529868",
+                "degree": "кандидат физико-математических наук"
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "506-2 к."
+            ],
+            "startLessonTime": "12:25",
+            "endLessonTime": "13:45",
+            "numSubgroup": 0,
+            "subject": "ОКГ",
+            "subjectFullName": "Основы компьютерной графики",
+            "weekNumber": [
+              2,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Светлана",
+                "middleName": "Валентиновна",
+                "lastName": "Гиль",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/525199",
+                "degree": "кандидат технических наук"
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "611-2 к."
+            ],
+            "startLessonTime": "12:25",
+            "endLessonTime": "13:45",
+            "numSubgroup": 0,
+            "subject": "ОКПрог",
+            "subjectFullName": "Основы конструирования программ",
+            "weekNumber": [
+              1,
+              3
+            ],
+            "employees": [
+              {
+                "firstName": "Константин",
+                "middleName": "Игоревич",
+                "lastName": "Давыдович",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/525053",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "507-1-3 к."
+            ],
+            "startLessonTime": "14:00",
+            "endLessonTime": "15:20",
+            "numSubgroup": 0,
+            "subject": "ИнЯз",
+            "subjectFullName": "Иностранный язык",
+            "weekNumber": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Оксана",
+                "middleName": "Николаевна",
+                "lastName": "Шульга",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/545439",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "313-3 к."
+            ],
+            "startLessonTime": "14:00",
+            "endLessonTime": "15:20",
+            "numSubgroup": 0,
+            "subject": "ИнЯз",
+            "subjectFullName": "Иностранный язык",
+            "weekNumber": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Ирина",
+                "middleName": "Ильгизовна",
+                "lastName": "Лихтарович",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/500223",
+                "degree": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Пятница",
+        "subjects": [
+          {
+            "auditories": [],
+            "startLessonTime": "10:35",
+            "endLessonTime": "11:55",
+            "numSubgroup": 0,
+            "subject": "ФизК",
+            "subjectFullName": "Физическая культура",
+            "weekNumber": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "employees": []
+          },
+          {
+            "auditories": [
+              "102-3 к."
+            ],
+            "startLessonTime": "12:25",
+            "endLessonTime": "13:45",
+            "numSubgroup": 0,
+            "subject": "Логика",
+            "subjectFullName": "Логика",
+            "weekNumber": [
+              1,
+              3
+            ],
+            "employees": [
+              {
+                "firstName": "Даниэла",
+                "middleName": "Андреевна",
+                "lastName": "Мозалевская",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/545343",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "405-5 к."
+            ],
+            "startLessonTime": "12:25",
+            "endLessonTime": "13:45",
+            "numSubgroup": 0,
+            "subject": "ОАиП",
+            "subjectFullName": "Основы алгоритмизации и программирования",
+            "weekNumber": [
+              2,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Никита",
+                "middleName": "Дмитриевич",
+                "lastName": "Рязанцев",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/550500",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "513-2 к."
+            ],
+            "startLessonTime": "14:00",
+            "endLessonTime": "15:20",
+            "numSubgroup": 2,
+            "subject": "ОКГ",
+            "subjectFullName": "Основы компьютерной графики",
+            "weekNumber": [
+              1,
+              3
+            ],
+            "employees": [
+              {
+                "firstName": "Светлана",
+                "middleName": "Валентиновна",
+                "lastName": "Гиль",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/525199",
+                "degree": "кандидат технических наук"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Суббота",
+        "subjects": [
+          {
+            "auditories": [
+              "102-3 к."
+            ],
+            "startLessonTime": "09:00",
+            "endLessonTime": "10:20",
+            "numSubgroup": 0,
+            "subject": "МА",
+            "subjectFullName": "Математический анализ",
+            "weekNumber": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Оксана",
+                "middleName": "Фёдоровна",
+                "lastName": "Филипович",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/504574",
+                "degree": ""
+              }
+            ]
+          },
+          {
+            "auditories": [
+              "205-3 к."
+            ],
+            "startLessonTime": "10:35",
+            "endLessonTime": "11:55",
+            "numSubgroup": 0,
+            "subject": "ЛАиАГ",
+            "subjectFullName": "Линейная алгебра и аналитическая геометрия",
+            "weekNumber": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "employees": [
+              {
+                "firstName": "Анатолий",
+                "middleName": "Павлович",
+                "lastName": "Тынкович",
+                "photoLink": "https://iis.bsuir.by/api/v1/employees/photo/529922",
+                "degree": "кандидат физико-математических наук"
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }
