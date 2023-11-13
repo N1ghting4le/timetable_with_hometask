@@ -1,0 +1,21 @@
+.day {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #393E46;
+    color: #fff;
+    box-shadow: 5px 5px 10px gray;
+    padding: 1rem;
+    height: 100%;
+}
+
+.text {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+@media (max-width: 431px) {
+    .text {
+        font-size: 1.2rem;
+    }
+}
