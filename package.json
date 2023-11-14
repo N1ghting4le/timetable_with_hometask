@@ -9,14 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.0.1",
-    "node": "^18.14.0",
+    "next": "13.4.4",
+    "node": "^16.17.0",
     "react": "^18",
     "react-dom": "^18",
-    "reactjs-popup": "^2.0.6"
+    "reactjs-popup": "^2.0.6",
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
     "eslint": "^8",
-    "eslint-config-next": "14.0.1"
+    "eslint-config-next": "13.4.4"
   }
 }
