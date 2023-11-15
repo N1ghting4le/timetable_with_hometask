@@ -76,8 +76,8 @@ const Subject = ({ auditory, start, end, subgroup, subject, subjShort, type, wee
 
             if (oldHtList && oldHtList.length) {
                 const newHtList = action === 'change' ? 
-                                oldHtList.map(ht => ht.subject === subjShort && ht.teacher === lastName ? { ...ht, text } : ht) :
-                                oldHtList.filter(ht => ht.subject !== subjShort || ht.teacher !== lastName);
+                oldHtList.map(ht => ht.subject === subjShort && JSON.stringify(ht.teacher) === JSON.stringify(teacher) ? { ...ht, text } : ht) :
+                oldHtList.filter(ht => ht.subject !== subjShort || JSON.stringify(ht.teacher) !== JSON.stringify(teacher));
 
                 request(url, "POST", JSON.stringify(newHtList), HEADERS).then(finishSending).catch(() => setProcess('error'));
             } else {
