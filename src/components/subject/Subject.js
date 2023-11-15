@@ -92,7 +92,8 @@ const Subject = ({ auditory, start, end, subgroup, subject, subjShort, type, wee
         } else if (text) {
             const body = {
                 subject: subjShort,
-                teacher: lastName,
+                teacher,
+                type,
                 text 
             }
 

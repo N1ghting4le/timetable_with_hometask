@@ -60,7 +60,7 @@ const TimetableService = () => {
                 const weekNum = item.id % 4 || 4;
                 const [{subjects: fullDayTimetable}] = timetable.filter(unit => unit.name === day.day);
                 const subjects = fullDayTimetable.filter(subj => subj.weekNumber.includes(weekNum)).map(subj => {
-                    const task = day.hometasks.filter(task => task.subject === subj.subject && task.teacher === subj.employees[0].lastName);
+                    const task = day.hometasks.filter(task => task.subject === subj.subject && JSON.stringify(task.teacher) === JSON.stringify(subj.employees[0]) && task.type === subj.type);
                     let hometask = "";
 
                     if (task.length) {
