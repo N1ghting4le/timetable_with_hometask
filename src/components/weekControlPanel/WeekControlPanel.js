@@ -36,7 +36,7 @@ const WeekControlPanel = ({ currWeekIndex, limit, elements, subgroup, setSubgrou
         window.onload = applyHeight;
     }, []);
 
-    useEffect(applyHeight, [curr, change, subgroup]);
+    useEffect(applyHeight, [process, curr, change, subgroup]);
 
     const moveToNext = () => setCurr(curr => curr + 1);
     const moveToPrev = () => setCurr(curr => curr - 1);
