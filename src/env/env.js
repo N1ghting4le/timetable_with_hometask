@@ -1,4 +1,4 @@
-const API_URL = "https://iis.bsuir.by/api/v1/schedule?studentGroup=318103",
+const API_URL = "",
       SERVER_URL = "https://jsonbin.org/n1ghting4le/blog",
       HEADERS = {
         'Content-Type': 'application/json',
