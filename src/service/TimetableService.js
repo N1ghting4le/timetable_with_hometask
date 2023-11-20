@@ -24,7 +24,7 @@ const TimetableService = () => {
 
             return {
                 name: item,
-                subjects: day.map(subj => ({
+                subjects: day.filter(subj => subj.lessonTypeAbbrev !== 'Консультация' && subj.lessonTypeAbbrev !== 'Экзамен').map(subj => ({
                     auditories: subj.auditories.length ? subj.auditories : [""],
                     startLessonTime: subj.startLessonTime,
                     endLessonTime: subj.endLessonTime,
