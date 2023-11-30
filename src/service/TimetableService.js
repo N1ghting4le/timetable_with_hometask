@@ -78,7 +78,7 @@ const TimetableService = () => {
                     day: day.day,
                     subjects
                 };
-            }).slice(0, item.days.length - 1)
+            }).slice(0, item.days[item.days.length - 1] ? item.days.length : item.days.length - 1)
         }));
 
         return {
