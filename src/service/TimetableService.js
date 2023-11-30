@@ -50,17 +50,15 @@ const TimetableService = () => {
 
         const weekList = listOfWeeks.map((item, i) => ({
             ...item,
-            days: item.days.map(day => {
+            days: item.days.filter(day => day.day !== "Воскресенье").map(day => {
                 if (day.date === dateStr) {
                     currWeekIndex = i;
                 }
 
-                if (day.day === "Воскресенье") return null;
-
                 const weekNum = item.id % 4 || 4;
                 const [{subjects: fullDayTimetable}] = timetable.filter(unit => unit.name === day.day);
                 const subjects = fullDayTimetable.filter(subj => subj.weekNumber.includes(weekNum)).map(subj => {
-                    const task = day.hometasks.filter(task => task.subject === subj.subject && JSON.stringify(task.teacher) === JSON.stringify(subj.employees[0]) && task.type === subj.type);
+                    const task = day.hometasks.filter(task => task.subject === subj.subject && (task.subject === 'ИнЯз' ? JSON.stringify(task.teacher) === JSON.stringify(subj.employees[0]) : true) && task.type === subj.type);
                     let hometask = "";
 
                     if (task.length) {
@@ -78,7 +76,7 @@ const TimetableService = () => {
                     day: day.day,
                     subjects
                 };
-            }).slice(0, item.days.length - 1)
+            })
         }));
 
         return {
