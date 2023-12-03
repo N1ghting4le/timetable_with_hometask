@@ -50,10 +50,12 @@ const TimetableService = () => {
 
         const weekList = listOfWeeks.map((item, i) => ({
             ...item,
-            days: item.days.filter(day => day.day !== "Воскресенье").map(day => {
+            days: item.days.map(day => {
                 if (day.date === dateStr) {
                     currWeekIndex = i;
                 }
+
+                if (day.day === 'Воскресенье') return null;
 
                 const weekNum = item.id % 4 || 4;
                 const [{subjects: fullDayTimetable}] = timetable.filter(unit => unit.name === day.day);
@@ -76,7 +78,7 @@ const TimetableService = () => {
                     day: day.day,
                     subjects
                 };
-            })
+            }).filter(day => day)
         }));
 
         return {
