@@ -8,6 +8,7 @@
     grid-auto-flow: column;
     padding: 10vh 7vw;
     height: min-content;
+    transition: transform 0.3s ease-in-out;
 }
 
 @media (max-width: 431px) {

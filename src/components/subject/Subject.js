@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState, useMemo, useEffect } from "react";
 import { PHOTO_URL, SERVER_URL, HEADERS } from "@/env/env";
 import useHttp from "@/hooks/http.hook";
-import { SubgroupContext, ChangeContext } from "../weekList/WeekList";
+import { SubgroupContext } from "../weekList/WeekList";
 import { useContext } from "react";
 import styles from "./subject.module.css";
 import "./popup.css";
@@ -17,7 +17,6 @@ const Subject = ({ auditory, start, end, subgroup, subject, subjShort, type, wee
     const [hometaskText, setHometaskText] = useState(hometask);
     const { firstName, middleName, lastName, photoLink } = teacher;
     const subgroupNum = useContext(SubgroupContext);
-    const setChange = useContext(ChangeContext);
 
     useEffect(() => {
         document.documentElement.style.overflowY = open ? 'hidden' : 'auto';
@@ -67,7 +66,6 @@ const Subject = ({ auditory, start, end, subgroup, subject, subjShort, type, wee
         const finishSending = () => {
             setHometaskText(text);
             setProcess('idle');
-            setChange(change => !change);
             closeModal();
         }
 

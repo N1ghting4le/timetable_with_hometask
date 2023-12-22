@@ -2,40 +2,38 @@
 
 import WeekControlPanel from "../weekControlPanel/WeekControlPanel";
 import Week from "../week/Week";
-import { useRef, useState, createContext } from "react";
+import Loading from "../loading/Loading";
+import { useState, useEffect, createContext } from "react";
 import styles from "./weekList.module.css";
 
 export const SubgroupContext = createContext(0);
-export const ChangeContext = createContext(() => {});
 
 const WeekList = ({ weekList, currWeekIndex }) => {
     const [subgroup, setSubgroup] = useState(0);
-    const [change, setChange] = useState(true);
-    const ref = useRef({});
+    const [curr, setCurr] = useState(currWeekIndex);
+    const [loaded, setLoaded] = useState(false);
 
-    const renderWeeks = () => weekList.map((week, i) => <Week key={i} weekIndex={i} days={week.days}/>);
+    useEffect(() => setLoaded(true), []);
+
+    const renderWeeks = () => weekList.map((week, i) => <Week key={i} weekIndex={i} days={week.days} curr={curr}/>);
 
     const elements = renderWeeks();
     
-    return (
-        <div className={styles.weekWrapper} ref={el => ref.current.weekListWrapper = el}>
+    return loaded ? (
+        <div className={styles.weekWrapper}>
             <WeekControlPanel currWeekIndex={currWeekIndex} 
-                              limit={weekList.length - 1} 
-                              elements={ref.current} 
+                              limit={weekList.length - 1}
                               subgroup={subgroup} 
-                              setSubgroup={setSubgroup} 
-                              change={change}/>
-            <div className={styles.weeks} 
-                 ref={el => ref.current.weekList = el} 
-                 style={{width: `${100 * weekList.length}%`, display: "none"}}>
+                              setSubgroup={setSubgroup}
+                              curr={curr}
+                              setCurr={setCurr}/>
+            <div className={styles.weeks}>
                 <SubgroupContext.Provider value={subgroup}>
-                    <ChangeContext.Provider value={setChange}>
-                        {elements}
-                    </ChangeContext.Provider>
+                    {elements}
                 </SubgroupContext.Provider>
             </div>
         </div>
-    );
+    ) : <Loading/>;
 }
 
 export default WeekList;
