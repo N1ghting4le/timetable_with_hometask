@@ -12,6 +12,34 @@
     transition: transform 0.3s ease-in-out;
 }
 
+@keyframes movementFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes movementFromRight {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.fromLeft {
+    animation: movementFromLeft 0.3s ease-in-out;
+}
+
+.fromRight {
+    animation: movementFromRight 0.3s ease-in-out;
+}
+
 @media (max-width: 431px) {
     .week {
         display: flex;

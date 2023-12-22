@@ -1,31 +1,25 @@
 'use client';
 
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef } from "react";
 import Day from "../day/Day";
 import styles from "./week.module.css";
 
 const Week = ({ weekIndex, days, curr }) => {
     const [prevCurr, setPrevCurr] = useState(curr);
+    const [isCurr, setIsCurr] = useState(curr === weekIndex);
+    const [side, setSide] = useState(true);
     const ref = useRef({});
-    const transform = useMemo(() => curr > weekIndex ? "translateX(-100%)" : "translateX(100%)", [curr]);
-
-    useEffect(() => {
-        ref.current.style.transform = transform;
-    }, []);
 
     useEffect(() => {
         if (curr === weekIndex) {
-            setTimeout(() => {
-                ref.current.style.transform = "";
-            });
-            
-            ref.current.style.display = "";
+            setSide(prevCurr > weekIndex);
+            setIsCurr(true);
         } else if (prevCurr === weekIndex) {
             setTimeout(() => {
-                ref.current.style.display = "none";
+                setIsCurr(false);
             }, 300);
 
-            ref.current.style.transform = transform;
+            ref.current.style.transform = curr > weekIndex ? "translateX(-100%)" : "translateX(100%)";
         }
 
         setPrevCurr(curr);
@@ -39,11 +33,11 @@ const Week = ({ weekIndex, days, curr }) => {
 
     const elements = renderDays();
 
-    return (
-        <div className={styles.week} ref={el => ref.current = el} style={{ display: "none" }}>
+    return isCurr ? (
+        <div className={`${styles.week} ${side ? styles.fromLeft : styles.fromRight}`} ref={el => ref.current = el}>
             {elements}
         </div>
-    );
+    ) : null;
 }
 
 export default Week;
