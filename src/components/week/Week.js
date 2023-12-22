@@ -16,12 +16,10 @@ const Week = ({ weekIndex, days, curr }) => {
     useEffect(() => {
         if (curr === weekIndex) {
             setTimeout(() => {
-                ref.current.style.position = "";
                 ref.current.style.transform = "";
-            }, 300);
-
+            });
+            
             ref.current.style.display = "";
-            ref.current.style.position = "absolute";
         } else if (prevCurr === weekIndex) {
             setTimeout(() => {
                 ref.current.style.display = "none";
