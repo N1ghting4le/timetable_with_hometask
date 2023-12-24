@@ -15,11 +15,15 @@ const Week = ({ weekIndex, days, curr }) => {
             setSide(prevCurr > weekIndex);
             setIsCurr(true);
         } else if (prevCurr === weekIndex) {
-            setTimeout(() => {
+            if (window.innerWidth > 431) {
+                setTimeout(() => {
+                    setIsCurr(false);
+                }, 300);
+    
+                ref.current.style.transform = curr > weekIndex ? "translateX(-100%)" : "translateX(100%)";
+            } else {
                 setIsCurr(false);
-            }, 300);
-
-            ref.current.style.transform = curr > weekIndex ? "translateX(-100%)" : "translateX(100%)";
+            }
         }
 
         setPrevCurr(curr);
