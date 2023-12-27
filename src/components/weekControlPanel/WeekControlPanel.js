@@ -8,13 +8,19 @@ const WeekControlPanel = ({ limit, subgroup, setSubgroup, curr, setCurr }) => {
     
     return (
         <div className={styles.wrapper}>
-            {curr === 0 ? null : <button className={`${styles.buttonStyle} ${styles.arrow} ${styles.prev}`} onClick={moveToPrev}>Пред. неделя</button>}
+            <button className={`${styles.buttonStyle} ${styles.arrow} ${styles.prev}`}
+                    disabled={!curr} 
+                    style={!curr ? { opacity: 0, cursor: "default" } : null} 
+                    onClick={moveToPrev}>Пред. неделя</button>
             <div className={styles.buttons}>
                 <button className={`${styles.buttonStyle} ${styles.subgrButt}`} data-subgr='0' onClick={changeSubgroup} style={isActive(0)}>Общее</button>
                 <button className={`${styles.buttonStyle} ${styles.subgrButt}`} data-subgr='1' onClick={changeSubgroup} style={isActive(1)}>1 Подгруппа</button>
                 <button className={`${styles.buttonStyle} ${styles.subgrButt}`} data-subgr='2' onClick={changeSubgroup} style={isActive(2)}>2 Подгруппа</button>
             </div>
-            {curr === limit ? null : <button className={`${styles.buttonStyle} ${styles.arrow} ${styles.next}`} onClick={moveToNext}>След. неделя</button>}
+            <button className={`${styles.buttonStyle} ${styles.arrow} ${styles.next}`}
+                    disabled={curr === limit} 
+                    style={curr === limit ? { opacity: 0, cursor: "default"} : null} 
+                    onClick={moveToNext}>След. неделя</button>
         </div>
     );
 }
