@@ -16,7 +16,8 @@ const TimetableService = () => {
               date = new Date(),
               currDate = date.getDate(),
               currMonth = date.getMonth(),
-              dateStr = `${currDate < 10 ? `0${currDate}` : currDate}.${currMonth + 1 < 10 ? `0${currMonth + 1}` : currMonth + 1}`;
+              currYear = date.getFullYear(),
+              dateStr = `${currDate < 10 ? `0${currDate}` : currDate}.${currMonth + 1 < 10 ? `0${currMonth + 1}` : currMonth + 1}.${currYear}`;
         let currWeekIndex = 0;
         
         const timetable = days.map(item => {
@@ -26,6 +27,8 @@ const TimetableService = () => {
                 name: item,
                 subjects: day.filter(subj => subj.lessonTypeAbbrev !== 'Консультация' && subj.lessonTypeAbbrev !== 'Экзамен').map(subj => ({
                     auditories: subj.auditories.length ? subj.auditories : [""],
+                    startLessonDate: subj.startLessonDate,
+                    endLessonDate: subj.endLessonDate,
                     startLessonTime: subj.startLessonTime,
                     endLessonTime: subj.endLessonTime,
                     numSubgroup: subj.numSubgroup,
@@ -57,9 +60,15 @@ const TimetableService = () => {
 
                 if (day.day === 'Воскресенье') return null;
 
+                const dayDate = new Date(day.date.split('.').reverse().join('-')).getTime();
                 const weekNum = item.id % 4 || 4;
                 const [{subjects: fullDayTimetable}] = timetable.filter(unit => unit.name === day.day);
-                const subjects = fullDayTimetable.filter(subj => subj.weekNumber && subj.weekNumber.includes(weekNum)).map(subj => {
+                const subjects = fullDayTimetable.filter(subj => {
+                    const subjStartDate = new Date(subj.startLessonDate.split('.').reverse().join('-')).getTime(),
+                          subjEndDate = new Date(subj.endLessonDate.split('.').reverse().join('-')).getTime();
+
+                    return subj.weekNumber && subj.weekNumber.includes(weekNum) && dayDate >= subjStartDate && dayDate <= subjEndDate;
+                }).map(subj => {
                     const task = day.hometasks.filter(task => task.subject === subj.subject && (task.subject === 'ИнЯз' ? JSON.stringify(task.teacher) === JSON.stringify(subj.employees[0]) : true) && task.type === subj.type);
                     let hometask = "";
 
@@ -74,7 +83,7 @@ const TimetableService = () => {
                 });
 
                 return {
-                    date: day.date,
+                    date: day.date.substring(0, day.date.lastIndexOf('.')),
                     day: day.day,
                     subjects
                 };
