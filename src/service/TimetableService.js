@@ -87,8 +87,8 @@ const TimetableService = () => {
                     day: day.day,
                     subjects
                 };
-            }).filter(day => day)
-        }));
+            }).filter(day => day && day.subjects.length)
+        })).filter(item => item.days.length);
 
         return {
             startDate,
