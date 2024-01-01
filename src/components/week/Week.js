@@ -7,12 +7,15 @@ import styles from "./week.module.css";
 const Week = ({ weekIndex, days, curr }) => {
     const [prevCurr, setPrevCurr] = useState(curr);
     const [isCurr, setIsCurr] = useState(curr === weekIndex);
-    const [side, setSide] = useState(true);
+    const [side, setSide] = useState('');
     const ref = useRef({});
 
     useEffect(() => {
         if (curr === weekIndex) {
-            setSide(prevCurr > weekIndex);
+            setSide(() => {
+                if (prevCurr > weekIndex) return styles.fromLeft;
+                return prevCurr < weekIndex ? styles.fromRight : null;
+            });
             setIsCurr(true);
         } else if (prevCurr === weekIndex) {
             if (window.innerWidth > 431) {
@@ -38,7 +41,7 @@ const Week = ({ weekIndex, days, curr }) => {
     const elements = renderDays();
 
     return isCurr ? (
-        <div className={`${styles.week} ${side ? styles.fromLeft : styles.fromRight}`} ref={el => ref.current = el}>
+        <div className={`${styles.week} ${side}`} ref={el => ref.current = el}>
             {elements}
         </div>
     ) : null;
