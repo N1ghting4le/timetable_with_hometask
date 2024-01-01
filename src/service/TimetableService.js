@@ -18,7 +18,7 @@ const TimetableService = () => {
               currMonth = date.getMonth(),
               currYear = date.getFullYear(),
               dateStr = `${currDate < 10 ? `0${currDate}` : currDate}.${currMonth + 1 < 10 ? `0${currMonth + 1}` : currMonth + 1}.${currYear}`;
-        let currWeekIndex = 0;
+        let currWeekIndex = 0, firstEmptyWeek = -1, lastEmptyWeek = -1;
         
         const timetable = days.map(item => {
             const day = schedules[item];
@@ -88,12 +88,20 @@ const TimetableService = () => {
                     subjects
                 };
             }).filter(day => day && day.subjects.length)
-        })).filter(item => item.days.length);
+        })).filter((item, i) => {
+            if (!item.days.length && firstEmptyWeek < 0) {
+                lastEmptyWeek = firstEmptyWeek = i;
+            } else if (!item.days.length) {
+                lastEmptyWeek = i;
+            }
 
+            return item.days.length;
+        });
+        
         return {
             startDate,
             endDate,
-            currWeekIndex,
+            currWeekIndex: currWeekIndex >= firstEmptyWeek && currWeekIndex <= lastEmptyWeek ? firstEmptyWeek - 1 : currWeekIndex,
             weekList
         };
     }
