@@ -5,13 +5,13 @@ const TimetableService = () => {
     const request = useHttp();
 
     const getTimetable = async () => {
-        const timetable = await request(API_URL);
+        const { schedules } = await request(API_URL);
         const weekList = await request(`${SERVER_URL}/weekList`, "GET", null, HEADERS);
 
-        return parseTimetable(timetable, weekList);
+        return parseTimetable(schedules, weekList);
     }
 
-    const parseTimetable = ({ schedules, startDate, endDate }, listOfWeeks) => {
+    const parseTimetable = (schedules, listOfWeeks) => {
         const days = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
               date = new Date(),
               currDate = date.getDate(),
@@ -97,13 +97,11 @@ const TimetableService = () => {
 
             return item.days.length;
         });
-        
+
         return {
-            startDate,
-            endDate,
-            currWeekIndex: currWeekIndex >= firstEmptyWeek && currWeekIndex <= lastEmptyWeek ? firstEmptyWeek - 1 : currWeekIndex,
-            weekList
-        };
+            weekList,
+            currWeekIndex: currWeekIndex >= firstEmptyWeek && currWeekIndex <= lastEmptyWeek ? firstEmptyWeek - 1 : currWeekIndex
+        }
     }
 
     return getTimetable;

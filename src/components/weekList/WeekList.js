@@ -1,5 +1,6 @@
 'use client';
 
+import TimetableService from "@/service/TimetableService";
 import WeekControlPanel from "../weekControlPanel/WeekControlPanel";
 import Week from "../week/Week";
 import Loading from "../loading/Loading";
@@ -8,21 +9,25 @@ import styles from "./weekList.module.css";
 
 export const SubgroupContext = createContext(0);
 
-const WeekList = ({ weekList, currWeekIndex }) => {
+const WeekList = () => {
     const [subgroup, setSubgroup] = useState(0);
-    const [curr, setCurr] = useState(currWeekIndex);
-    const [loaded, setLoaded] = useState(false);
+    const [curr, setCurr] = useState(0);
+    const [weekList, setWeekList] = useState([]);
+    const getTimetable = TimetableService();
 
-    useEffect(() => setLoaded(true), []);
+    useEffect(async () => {
+        const { weekList, currWeekIndex } = await getTimetable();
+        setCurr(currWeekIndex);
+        setWeekList(weekList);
+    }, []);
 
     const renderWeeks = () => weekList.map((week, i) => <Week key={i} weekIndex={i} days={week.days} curr={curr}/>);
 
     const elements = renderWeeks();
     
-    return loaded ? (
+    return weekList.length ? (
         <div className={styles.weekWrapper}>
-            <WeekControlPanel currWeekIndex={currWeekIndex} 
-                              limit={weekList.length - 1}
+            <WeekControlPanel limit={weekList.length - 1}
                               subgroup={subgroup} 
                               setSubgroup={setSubgroup}
                               curr={curr}
