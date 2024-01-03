@@ -1,5 +1,3 @@
-'use client';
-
 import styles from "./loading.module.css";
 import Image from "next/image";
 
