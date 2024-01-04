@@ -4,6 +4,7 @@ import TimetableService from "@/service/TimetableService";
 import WeekControlPanel from "../weekControlPanel/WeekControlPanel";
 import Week from "../week/Week";
 import Loading from "../loading/Loading";
+import device from "current-device";
 import { useState, useEffect, createContext } from "react";
 import styles from "./weekList.module.css";
 
@@ -14,6 +15,7 @@ const WeekList = () => {
     const [curr, setCurr] = useState(0);
     const [weekList, setWeekList] = useState([]);
     const getTimetable = TimetableService();
+    const isDesktop = device.desktop();
 
     useEffect(() => {
         (async () => {
@@ -23,7 +25,7 @@ const WeekList = () => {
         })();
     }, []);
 
-    const renderWeeks = () => weekList.map((week, i) => <Week key={i} weekIndex={i} days={week.days} curr={curr}/>);
+    const renderWeeks = () => weekList.map((week, i) => <Week key={i} weekIndex={i} days={week.days} curr={curr} isDesktop={isDesktop}/>);
 
     const elements = renderWeeks();
     

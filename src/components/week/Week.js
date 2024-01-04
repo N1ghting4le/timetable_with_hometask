@@ -1,15 +1,13 @@
 'use client';
 
-import device from "current-device";
 import { useState, useEffect, useRef } from "react";
 import Day from "../day/Day";
 import styles from "./week.module.css";
 
-const Week = ({ weekIndex, days, curr }) => {
+const Week = ({ weekIndex, days, curr, isDesktop }) => {
     const [prevCurr, setPrevCurr] = useState(curr);
     const [isCurr, setIsCurr] = useState(curr === weekIndex);
     const [side, setSide] = useState('');
-    const isDesktop = device.desktop();
     const ref = useRef({});
 
     useEffect(() => {
