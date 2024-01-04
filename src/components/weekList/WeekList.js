@@ -15,10 +15,12 @@ const WeekList = () => {
     const [weekList, setWeekList] = useState([]);
     const getTimetable = TimetableService();
 
-    useEffect(async () => {
-        const { weekList, currWeekIndex } = await getTimetable();
-        setCurr(currWeekIndex);
-        setWeekList(weekList);
+    useEffect(() => {
+        (async () => {
+            const { weekList, currWeekIndex } = await getTimetable();
+            setCurr(currWeekIndex);
+            setWeekList(weekList);
+        })();
     }, []);
 
     const renderWeeks = () => weekList.map((week, i) => <Week key={i} weekIndex={i} days={week.days} curr={curr}/>);

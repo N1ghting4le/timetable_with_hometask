@@ -1,5 +1,6 @@
 'use client';
 
+import device from "current-device";
 import { useState, useEffect, useRef } from "react";
 import Day from "../day/Day";
 import styles from "./week.module.css";
@@ -8,6 +9,7 @@ const Week = ({ weekIndex, days, curr }) => {
     const [prevCurr, setPrevCurr] = useState(curr);
     const [isCurr, setIsCurr] = useState(curr === weekIndex);
     const [side, setSide] = useState('');
+    const isDesktop = device.desktop();
     const ref = useRef({});
 
     useEffect(() => {
@@ -18,7 +20,7 @@ const Week = ({ weekIndex, days, curr }) => {
             });
             setIsCurr(true);
         } else if (prevCurr === weekIndex) {
-            if (window.innerWidth > 431) {
+            if (isDesktop) {
                 setTimeout(() => {
                     setIsCurr(false);
                 }, 300);
