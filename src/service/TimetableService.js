@@ -13,7 +13,7 @@ const TimetableService = () => {
 
     const parseTimetable = (schedules, listOfWeeks) => {
         const days = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
-              date = new Date('2024-05-13'),
+              date = new Date(),
               currDate = date.getDate(),
               currMonth = date.getMonth(),
               currYear = date.getFullYear(),
