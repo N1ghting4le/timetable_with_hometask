@@ -13,7 +13,7 @@ const TimetableService = () => {
 
     const parseTimetable = (schedules, listOfWeeks) => {
         const days = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
-              date = new Date(),
+              date = new Date('2024-05-13'),
               currDate = date.getDate(),
               currMonth = date.getMonth(),
               currYear = date.getFullYear(),
@@ -100,7 +100,7 @@ const TimetableService = () => {
 
         return {
             weekList,
-            currWeekIndex: currWeekIndex >= firstEmptyWeek && currWeekIndex <= lastEmptyWeek ? firstEmptyWeek - 1 : currWeekIndex
+            currWeekIndex: currWeekIndex >= firstEmptyWeek ? currWeekIndex <= lastEmptyWeek ? firstEmptyWeek - 1 : currWeekIndex + firstEmptyWeek - lastEmptyWeek - 1 : currWeekIndex
         }
     }
 
